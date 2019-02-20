@@ -9,13 +9,10 @@ import java.util.List;
  */
 public class RuleNode {
 
-    /**
-     *  规则集id，如果不含`&`则代表是原始规则集下标
-     */
     private String id;
 
     /**
-     * 融合类型，0 ：加权融合（blend）；1 ： 尾部添加（append）；2 ： 由其他部门融合
+     * 融合类型，0 ：加权融合（blend）；1 ： 顺序融合（append）；2 ： 由其他部门融合
      */
     private int type;
 
