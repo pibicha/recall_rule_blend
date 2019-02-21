@@ -1,6 +1,4 @@
-package com.git.poan;
-
-import com.git.poan.bean.RecItem;
+package com.git.poan.bean;
 
 import java.util.List;
 

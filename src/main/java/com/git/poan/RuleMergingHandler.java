@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.git.poan.bean.RecItem;
 import com.git.poan.bean.RuleMergingResult;
+import com.git.poan.bean.RuleMergingStrategyEntity;
+import com.git.poan.bean.RuleNode;
 
 import java.util.ArrayList;
 import java.util.List;

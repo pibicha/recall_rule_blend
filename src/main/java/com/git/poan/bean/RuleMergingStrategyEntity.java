@@ -1,4 +1,4 @@
-package com.git.poan;
+package com.git.poan.bean;
 
 public class RuleMergingStrategyEntity {
 

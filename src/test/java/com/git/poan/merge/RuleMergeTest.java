@@ -2,8 +2,8 @@ package com.git.poan.merge;
 
 import com.alibaba.fastjson.JSON;
 import com.git.poan.RuleMergingHandler;
-import com.git.poan.RuleMergingStrategyEntity;
-import com.git.poan.RuleNode;
+import com.git.poan.bean.RuleMergingStrategyEntity;
+import com.git.poan.bean.RuleNode;
 import com.git.poan.bean.RecItem;
 import com.git.poan.bean.RuleMergingResult;
 

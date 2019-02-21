@@ -1,4 +1,4 @@
-package com.git.poan;
+package com.git.poan.bean;
 
 import java.util.HashMap;
 import java.util.Map;
