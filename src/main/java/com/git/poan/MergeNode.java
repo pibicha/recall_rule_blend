@@ -81,7 +81,6 @@ public class MergeNode {
                     }
                     loop++;
                 }
-                // 创建son.size个指针，分别记录每个son的偏移量
                 break;
             case APPEND:
                 for (RuleNode node : son) {
