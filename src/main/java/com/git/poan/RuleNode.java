@@ -1,5 +1,7 @@
 package com.git.poan;
 
+import com.git.poan.bean.RecItem;
+
 import java.util.List;
 
 /**
@@ -9,24 +11,24 @@ import java.util.List;
  */
 public class RuleNode {
 
-    private String id;
+    private Integer id;
 
     /**
      * 融合类型，0 ：加权融合（blend）；1 ： 顺序融合（append）；2 ： 由其他部门融合
      */
     private int type;
 
-    private float weight;
+    private int weight;
 
     private List<RuleNode> son;
 
-    private List<Rule> rules;
+    private List<RecItem> recItem;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -38,11 +40,11 @@ public class RuleNode {
         this.type = type;
     }
 
-    public float getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(float weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
@@ -54,21 +56,11 @@ public class RuleNode {
         this.son = son;
     }
 
-    public List<Rule> getRules() {
-        return rules;
+    public List<RecItem> getRecItem() {
+        return recItem;
     }
 
-    public void setRules(List<Rule> rules) {
-        this.rules = rules;
-    }
-
-    @Override
-    public String toString() {
-        return "RuleNode{" +
-                "id='" + id + '\'' +
-                ", type=" + type +
-                ", weight=" + weight +
-                ", son=" + son +
-                '}';
+    public void setRecItem(List<RecItem> recItem) {
+        this.recItem = recItem;
     }
 }
