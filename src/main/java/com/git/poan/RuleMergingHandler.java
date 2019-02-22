@@ -6,10 +6,9 @@ import com.git.poan.bean.RecItem;
 import com.git.poan.bean.RuleMergingResult;
 import com.git.poan.bean.RuleMergingStrategyEntity;
 import com.git.poan.bean.RuleNode;
+import com.google.common.collect.Lists;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class RuleMergingHandler {
@@ -41,6 +40,7 @@ public class RuleMergingHandler {
             rootNode = JSON.parseObject(expression, RuleNode.class);
             expression = ruleMergingStrategyEntity.getExpression();
         } catch (JSONException e) {
+            System.out.println(expression);
             return null;//
         }
         RuleNode mainRuleMerged = MergeNode.merge(rootNode, idItemMap);
@@ -53,6 +53,11 @@ public class RuleMergingHandler {
             mergedFallbackRules.addAll(items);
         }
         finalMergeItems.addAll(mergedFallbackRules);
+        // Set底层是Map，为保证Set在添加时不重复扩容导致重hash和开辟空间，这里先指定最极端情况（recItem都不重复）的容量
+        int setSize = (int) (finalMergeItems.size() / 0.75) + 1;
+        Set<RecItem> distinctRecItems = new LinkedHashSet<>(setSize);
+        distinctRecItems.addAll(finalMergeItems);
+        finalMergeItems = Lists.newArrayList(distinctRecItems);
         ruleMergingResult.setItems(finalMergeItems);
         return ruleMergingResult;
     }
